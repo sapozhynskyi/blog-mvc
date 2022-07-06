@@ -25,3 +25,4 @@ class BaseValidator
         return $this->errors;
     }
 }
+

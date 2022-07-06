@@ -10,4 +10,8 @@ abstract class Controller
     public function after(){
 
     }
+    protected function getPArams(){
+
+    }
 }
+

@@ -60,7 +60,7 @@ trait QueryTrait
         return static::find($id);
     }
 
-    public static function create($fields){
+    public static function create(array $fields){
         $vars = static::prepareQuery($fields);
         $query = 'INSERT INTO ' . static::$tableName . '('. $vars['keys'] .') VALUES (' . $vars['placeholders'] .')';
         $query = static::connect()->prepare($query);

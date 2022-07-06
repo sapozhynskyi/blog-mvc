@@ -8,3 +8,4 @@ class User extends Model
     protected static string|null $tableName = "users";
 }
 
+

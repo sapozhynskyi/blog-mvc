@@ -18,3 +18,4 @@ class UserBaseValidator extends BaseValidator
         return false;
     }
 }
+

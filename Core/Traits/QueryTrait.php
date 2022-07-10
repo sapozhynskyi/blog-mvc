@@ -35,29 +35,23 @@ trait QueryTrait
         $query->execute();
 
     }
-    public function update(array $fields, $id)
+    public function update(array $fields)
     {
-        $query = "UPDATE " . static::$tableName . ' SET ';
-
-        $ps = [];
-        foreach ($fields as $key => $value) {
-            $ps[] = " {$key}=:{$key}";
+        if (!isset($this->id)) {
+            return $this;
         }
-        $query .=  implode(', ', $ps);
 
-        $query .= " WHERE id=:id";
-
+        $query = "UPDATE " . static::$tableName . ' SET ' . static::buildPlaceholders($fields) . " WHERE id=:id";
         $stmt = static::connect()->prepare($query);
 
         foreach ($fields as $key => $value) {
             $stmt->bindValue(":{$key}", $value);
         }
 
-        $stmt->bindValue('id', $id, PDO::PARAM_INT);
-
+        $stmt->bindValue('id', $this->id, PDO::PARAM_INT);
         $stmt->execute();
 
-        return static::find($id);
+        return static::find($this->id);
     }
 
     public static function create(array $fields){
@@ -93,6 +87,17 @@ trait QueryTrait
         $stmt->bindValue(':value', $value);
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_CLASS,static::class);
+    }
+
+    private static function buildPlaceholders(array $fields): string
+    {
+        $ps = [];
+
+        foreach ($fields as $key => $value) {
+            $ps[] = " {$key}=:{$key}";
+        }
+
+        return implode(', ', $ps);
     }
 
 }

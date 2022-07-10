@@ -9,3 +9,5 @@
     <link rel="stylesheet" href="<?= ASSET_URL . '/libs/bootstrap/css/bootstrap.min.css' ?>">
 </head>
 <body>
+    <?php include_once VIEW_DIR . '/nav.php'; ?>
+

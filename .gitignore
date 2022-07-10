@@ -1,4 +1,5 @@
 .idea/
 .env
 /vendor/
-/public/assets/
+/public/assets/image
+public/assets/libs

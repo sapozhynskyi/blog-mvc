@@ -8,6 +8,6 @@
     <title><?= !empty($pageTitle) ? $pageTitle : 'Home' ?></title>
     <link rel="stylesheet" href="<?= ASSET_URL . '/libs/bootstrap/css/bootstrap.min.css' ?>">
 </head>
-<body>
+<body style="background-image:url(<?= ASSET_URL . '/image/just.jpg'?>)">
     <?php include_once VIEW_DIR . '/nav.php'; ?>
 

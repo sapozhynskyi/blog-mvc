@@ -9,4 +9,5 @@ define('VIEW_DIR', APP_DIR . '\Views');
 
 const IMG_DIR = BASE_DIR . '\public\assets\image';
 const CATEGORIES_IMG_DIR = IMG_DIR . "\categories\\";
+const POST_IMG_DIR = IMG_DIR . "\posts\\";
 

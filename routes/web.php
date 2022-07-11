@@ -1,6 +1,12 @@
 <?php
 
 $router->add('',['controller' => \App\Controllers\HomeController::class, 'action' => 'index', 'method' => 'GET']);
+$router->add('home/showCategories',['controller' => \App\Controllers\HomeController::class, 'action' => 'showCategories', 'method' => 'GET']);
+$router->add('home/{id:\d+}/showSingleCategories',['controller' => \App\Controllers\HomeController::class, 'action' => 'showSingleCategories', 'method' => 'GET']);
+$router->add('home/showPost',['controller' => \App\Controllers\HomeController::class, 'action' => 'showPost', 'method' => 'GET']);
+$router->add('home/{id:\d+}/showSinglePost',['controller' => \App\Controllers\HomeController::class, 'action' => 'showSinglePost', 'method' => 'GET']);
+
+
 $router->add('logout', ['controller' => \App\Controllers\AuthController::class, 'action' => 'logout', 'method' => 'GET']);
 $router->add('login',['controller' => \App\Controllers\AuthController::class, 'action' => 'login', 'method' => 'GET']);
 $router->add('registration',['controller' => \App\Controllers\AuthController::class, 'action' => 'register', 'method' => 'GET']);

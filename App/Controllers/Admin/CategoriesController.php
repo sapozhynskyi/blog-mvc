@@ -3,7 +3,6 @@
 namespace App\Controllers\Admin;
 use App\Models\Category;
 use App\Validators\CreateCategoryValidator;
-use App\Validators\UserCreateValidator;
 use Core\View;
 use App\Services\FileUploadService;
 

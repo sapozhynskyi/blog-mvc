@@ -4,7 +4,7 @@
             <div class="col-12 text-center text-uppercase">
                 <?php
                 if (!empty($posts)) {
-                    include_once VIEW_DIR . '/admin/posts/parts/products_list.php';
+                    include_once VIEW_DIR . '/admin/posts/parts/posts_list.php';
                 } else {
                     echo "<h3>Posts are not yet available</h3>";
                 }
